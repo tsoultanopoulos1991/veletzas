@@ -3,7 +3,7 @@
 // These three values are meant to be public (EmailJS restricts sending by
 // allowed domain in the dashboard, not by keeping this secret).
 export const emailConfig = {
-  serviceId: "YOUR_SERVICE_ID",
-  templateId: "YOUR_TEMPLATE_ID",
-  publicKey: "YOUR_PUBLIC_KEY",
+  serviceId: "service_7553xot",
+  templateId: "template_1vcx4ec",
+  publicKey: "6iuPCo7GMy3cH7AWd",
 };
