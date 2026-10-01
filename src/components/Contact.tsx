@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { business, categories, contact } from "../data/content";
+import { business, categories, contact, locations } from "../data/content";
 import Reveal from "./Reveal";
 
 export default function Contact() {
@@ -23,31 +23,32 @@ export default function Contact() {
           <h2 className="section-heading mt-4 text-3xl text-cream sm:text-4xl">{contact.title}</h2>
           <p className="mt-4 text-base leading-relaxed text-cream/70 sm:text-lg">{contact.subtitle}</p>
 
-          <div className="mt-10 space-y-5">
-            <a href={business.phoneHref} className="flex items-center gap-4 group">
-              <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-cream/10 text-accent-light transition-colors group-hover:bg-accent group-hover:text-cream">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 015 6a2 2 0 012-2z" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <span>
-                <span className="block text-xs font-semibold uppercase tracking-wide text-cream/50">Σταθερό</span>
-                <span className="block text-lg font-semibold text-cream">{business.phone}</span>
-              </span>
-            </a>
-
-            <a href={business.mobileHref} className="flex items-center gap-4 group">
-              <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-cream/10 text-accent-light transition-colors group-hover:bg-accent group-hover:text-cream">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <rect x="7" y="3" width="10" height="18" rx="2" />
-                  <path d="M11 18h2" strokeLinecap="round" />
-                </svg>
-              </span>
-              <span>
-                <span className="block text-xs font-semibold uppercase tracking-wide text-cream/50">Κινητό</span>
-                <span className="block text-lg font-semibold text-cream">{business.mobile}</span>
-              </span>
-            </a>
+          <div className="mt-10 space-y-7">
+            {locations.map((loc) => (
+              <div key={loc.name} className="flex items-start gap-4">
+                <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-cream/10 text-accent-light">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M3 10.5L12 4l9 6.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M5 9.5V20h14V9.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <span>
+                  <span className="block text-xs font-semibold uppercase tracking-wide text-cream/50">{loc.name}</span>
+                  <span className="block text-lg font-semibold text-cream">{loc.address}</span>
+                  <span className="mt-1 flex flex-wrap gap-x-3 gap-y-1">
+                    {loc.phones.map((p) => (
+                      <a
+                        key={p.href}
+                        href={p.href}
+                        className="text-sm font-medium text-cream/70 transition-colors hover:text-accent-light"
+                      >
+                        {p.number}
+                      </a>
+                    ))}
+                  </span>
+                </span>
+              </div>
+            ))}
 
             <a href={business.instagramUrl} target="_blank" rel="noreferrer" className="flex items-center gap-4 group">
               <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-cream/10 text-accent-light transition-colors group-hover:bg-accent group-hover:text-cream">

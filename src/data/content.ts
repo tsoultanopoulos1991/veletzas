@@ -1,6 +1,8 @@
 export const business = {
   name: "Τεντοτεχνική Περιστερίου",
   owner: "Παντελής Βελέντζας",
+  // Kept for components that just need "a" phone number (e.g. the contact
+  // form's confirmation copy) — the full, per-location numbers live below.
   phone: "210 5729205",
   phoneHref: "tel:+302105729205",
   mobile: "6974 011 209",
@@ -9,6 +11,28 @@ export const business = {
   instagramUrl: "https://instagram.com/tentotexnikiperisteriou",
   area: "Περιστέρι & Δυτική Αττική",
 };
+
+export const locations = [
+  {
+    name: "Κατάστημα Περιστερίου",
+    address: "Φλέμινγκ 6, Περιστέρι",
+    photo: "/images/company/0001-64cc6ad5ac58.jpg",
+    phones: [
+      { number: "210 57 29 205", href: "tel:+302105729205" },
+      { number: "697 40 11 209", href: "tel:+306974011209" },
+      { number: "697 24 54 280", href: "tel:+306972454280" },
+    ],
+  },
+  {
+    name: "Κατάστημα Νέας Ιωνίας",
+    address: "Σινώπης 76, Νέα Ιωνία",
+    photo: null,
+    phones: [
+      { number: "210 27 99 742", href: "tel:+302102799742" },
+      { number: "693 70 14 479", href: "tel:+306937014479" },
+    ],
+  },
+];
 
 export const nav = [
   { href: "#home", label: "Αρχική" },

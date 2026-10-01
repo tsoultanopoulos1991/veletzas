@@ -1,4 +1,4 @@
-import { business, nav } from "../data/content";
+import { business, locations, nav } from "../data/content";
 
 export default function Footer() {
   return (
@@ -28,19 +28,25 @@ export default function Footer() {
             </ul>
           </div>
 
+          {locations.map((loc) => (
+            <div key={loc.name}>
+              <h4 className="text-xs font-semibold uppercase tracking-wide text-cream/40">{loc.name}</h4>
+              <ul className="mt-4 space-y-2.5">
+                <li className="text-sm text-cream/70">{loc.address}</li>
+                {loc.phones.map((p) => (
+                  <li key={p.href}>
+                    <a href={p.href} className="text-sm text-cream/70 transition-colors hover:text-accent-light">
+                      {p.number}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wide text-cream/40">Επικοινωνία</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-wide text-cream/40">Social</h4>
             <ul className="mt-4 space-y-2.5">
-              <li>
-                <a href={business.phoneHref} className="text-sm text-cream/70 transition-colors hover:text-accent-light">
-                  {business.phone}
-                </a>
-              </li>
-              <li>
-                <a href={business.mobileHref} className="text-sm text-cream/70 transition-colors hover:text-accent-light">
-                  {business.mobile}
-                </a>
-              </li>
               <li>
                 <a
                   href={business.instagramUrl}
