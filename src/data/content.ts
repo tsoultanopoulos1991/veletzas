@@ -9,7 +9,6 @@ export const business = {
   mobileHref: "tel:+306974011209",
   instagramHandle: "tentotexnikiperisteriou",
   instagramUrl: "https://instagram.com/tentotexnikiperisteriou",
-  area: "Περιστέρι & Δυτική Αττική",
 };
 
 export const locations = [
@@ -56,7 +55,6 @@ export const trustStrip = [
   "Δωρεάν μέτρηση & προσφορά κατ' οίκον",
   "Τοποθέτηση από το δικό μας συνεργείο",
   "Ποιοτικά υλικά & μηχανισμοί",
-  business.area,
 ];
 
 export const categories = [

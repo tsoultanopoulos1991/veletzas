@@ -57,7 +57,6 @@ export default function Footer() {
                   @{business.instagramHandle}
                 </a>
               </li>
-              <li className="text-sm text-cream/70">{business.area}</li>
             </ul>
           </div>
         </div>

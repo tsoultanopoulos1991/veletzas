@@ -63,19 +63,6 @@ export default function Contact() {
                 <span className="block text-lg font-semibold text-cream">@{business.instagramHandle}</span>
               </span>
             </a>
-
-            <div className="flex items-center gap-4">
-              <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-cream/10 text-accent-light">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M12 21s7-6.5 7-11.5A7 7 0 105 9.5C5 14.5 12 21 12 21z" strokeLinejoin="round" />
-                  <circle cx="12" cy="9.5" r="2.5" />
-                </svg>
-              </span>
-              <span>
-                <span className="block text-xs font-semibold uppercase tracking-wide text-cream/50">Περιοχή</span>
-                <span className="block text-lg font-semibold text-cream">{business.area}</span>
-              </span>
-            </div>
           </div>
         </Reveal>
 
