@@ -4,7 +4,10 @@ import { business, categories, contact, locations } from "../data/content";
 import { emailConfig } from "../data/email";
 import Reveal from "./Reveal";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "sent" | "error" | "rate-limited";
+
+const RATE_LIMIT_MS = 60_000;
+const RATE_LIMIT_KEY = "contactFormLastSubmit";
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -13,10 +16,36 @@ export default function Contact() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
+
+    const data = new FormData(formRef.current);
+    // Honeypot: a field real visitors never see or fill in. Bots that
+    // auto-fill every input trip it, and we quietly pretend it worked.
+    if (data.get("company_website")) {
+      setStatus("sent");
+      return;
+    }
+
+    try {
+      const last = Number(localStorage.getItem(RATE_LIMIT_KEY) ?? 0);
+      if (Date.now() - last < RATE_LIMIT_MS) {
+        setStatus("rate-limited");
+        return;
+      }
+    } catch {
+      // localStorage unavailable (private mode, etc.) — skip the rate limit.
+    }
+
     setStatus("sending");
     emailjs
       .sendForm(emailConfig.serviceId, emailConfig.templateId, formRef.current, { publicKey: emailConfig.publicKey })
-      .then(() => setStatus("sent"))
+      .then(() => {
+        try {
+          localStorage.setItem(RATE_LIMIT_KEY, String(Date.now()));
+        } catch {
+          // ignore
+        }
+        setStatus("sent");
+      })
       .catch(() => setStatus("error"));
   };
 
@@ -95,6 +124,14 @@ export default function Contact() {
               </div>
             ) : (
               <form ref={formRef} onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <input
+                  type="text"
+                  name="company_website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden"
+                />
                 <label className="flex flex-col gap-2 text-sm font-semibold text-ink-soft">
                   Ονοματεπώνυμο
                   <input
@@ -142,6 +179,11 @@ export default function Contact() {
                 {status === "error" && (
                   <p className="sm:col-span-2 text-sm font-medium text-red-600">
                     Κάτι πήγε στραβά. Δοκιμάστε ξανά ή καλέστε μας στο {business.phone}.
+                  </p>
+                )}
+                {status === "rate-limited" && (
+                  <p className="sm:col-span-2 text-sm font-medium text-red-600">
+                    Μόλις στείλατε ένα αίτημα — περιμένετε λίγο πριν στείλετε ξανά.
                   </p>
                 )}
 
