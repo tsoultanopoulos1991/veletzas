@@ -1,25 +1,29 @@
-import { about, business } from "../data/content";
+import { about, business, locations } from "../data/content";
 import Reveal from "./Reveal";
 
 export default function About() {
+  const [mainLocation, badgeLocation] = locations;
+
   return (
     <section id="about" className="bg-sand py-24 sm:py-28">
       <div className="container-px grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
         <Reveal className="relative">
           <div className="overflow-hidden rounded-[2rem] shadow-soft">
             <img
-              src="/images/company/0001-64cc6ad5ac58.jpg"
-              alt="Η έκθεση της Τεντοτεχνικής Περιστερίου"
+              src={mainLocation.photo ?? "/images/company/0001-64cc6ad5ac58.jpg"}
+              alt={`Το ${mainLocation.name} της Τεντοτεχνικής Περιστερίου`}
               className="h-[420px] w-full object-cover sm:h-[520px]"
             />
           </div>
-          <div className="absolute -bottom-8 -right-4 w-40 overflow-hidden rounded-2xl border-4 border-cream shadow-card sm:-right-8 sm:w-52">
-            <img
-              src="/images/company/0002-2e6e8df96c30.jpg"
-              alt="Η πρόσοψη της Τεντοτεχνικής Περιστερίου"
-              className="h-full w-full object-cover"
-            />
-          </div>
+          {badgeLocation?.photo && (
+            <div className="absolute -bottom-8 -right-4 w-40 overflow-hidden rounded-2xl border-4 border-cream shadow-card sm:-right-8 sm:w-52">
+              <img
+                src={badgeLocation.photo}
+                alt={`Το ${badgeLocation.name} της Τεντοτεχνικής Περιστερίου`}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          )}
         </Reveal>
 
         <Reveal delay={120}>
