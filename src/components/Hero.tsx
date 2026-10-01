@@ -5,8 +5,8 @@ const SLIDE_MS = 6000;
 
 const slides = [
   {
-    src: "/images/tentopergoles/0037-ac90d830a86a.jpg",
-    alt: "Τεντοπέργκολα με θέα στο ηλιοβασίλεμα – Τεντοτεχνική Περιστερίου",
+    src: "/images/company/0001-64cc6ad5ac58.jpg",
+    alt: "Το κατάστημα της Τεντοτεχνικής Περιστερίου",
   },
   {
     src: "/images/tentopergoles/0308-0906283d7487.jpg",
