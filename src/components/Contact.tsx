@@ -1,13 +1,23 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { business, categories, contact, locations } from "../data/content";
+import { emailConfig } from "../data/email";
 import Reveal from "./Reveal";
 
+type Status = "idle" | "sending" | "sent" | "error";
+
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<Status>("idle");
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (!formRef.current) return;
+    setStatus("sending");
+    emailjs
+      .sendForm(emailConfig.serviceId, emailConfig.templateId, formRef.current, { publicKey: emailConfig.publicKey })
+      .then(() => setStatus("sent"))
+      .catch(() => setStatus("error"));
   };
 
   return (
@@ -68,7 +78,7 @@ export default function Contact() {
 
         <Reveal className="lg:col-span-3" delay={120}>
           <div className="rounded-3xl bg-cream p-7 shadow-soft sm:p-10">
-            {submitted ? (
+            {status === "sent" ? (
               <div className="flex min-h-[320px] flex-col items-center justify-center text-center">
                 <span className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/15 text-accent-dark">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -79,16 +89,17 @@ export default function Contact() {
                 <p className="mt-2 max-w-sm text-ink-muted">
                   Λάβαμε το αίτημά σας και θα επικοινωνήσουμε μαζί σας σύντομα για να κλείσουμε ραντεβού για δωρεάν μέτρηση.
                 </p>
-                <button onClick={() => setSubmitted(false)} className="btn-outline mt-7 !px-5 !py-2.5">
+                <button onClick={() => setStatus("idle")} className="btn-outline mt-7 !px-5 !py-2.5">
                   Νέο αίτημα
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <form ref={formRef} onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <label className="flex flex-col gap-2 text-sm font-semibold text-ink-soft">
                   Ονοματεπώνυμο
                   <input
                     required
+                    name="from_name"
                     type="text"
                     placeholder="π.χ. Γιώργος Παπαδόπουλος"
                     className="rounded-xl border border-ink/10 bg-sand px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent"
@@ -98,6 +109,7 @@ export default function Contact() {
                   Τηλέφωνο
                   <input
                     required
+                    name="phone"
                     type="tel"
                     placeholder="69XX XXX XXX"
                     className="rounded-xl border border-ink/10 bg-sand px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent"
@@ -105,25 +117,36 @@ export default function Contact() {
                 </label>
                 <label className="sm:col-span-2 flex flex-col gap-2 text-sm font-semibold text-ink-soft">
                   Με ενδιαφέρει
-                  <select className="rounded-xl border border-ink/10 bg-sand px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent">
+                  <select
+                    name="category"
+                    className="rounded-xl border border-ink/10 bg-sand px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent"
+                  >
                     {categories.map((c) => (
-                      <option key={c.slug} value={c.slug}>
+                      <option key={c.slug} value={c.title}>
                         {c.title}
                       </option>
                     ))}
-                    <option value="other">Κάτι άλλο</option>
+                    <option value="Κάτι άλλο">Κάτι άλλο</option>
                   </select>
                 </label>
                 <label className="sm:col-span-2 flex flex-col gap-2 text-sm font-semibold text-ink-soft">
                   Μήνυμα
                   <textarea
+                    name="message"
                     rows={4}
                     placeholder="Πείτε μας λίγα λόγια για τον χώρο σας…"
                     className="resize-none rounded-xl border border-ink/10 bg-sand px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent"
                   />
                 </label>
-                <button type="submit" className="btn-primary sm:col-span-2 mt-1">
-                  Αποστολή αιτήματος
+
+                {status === "error" && (
+                  <p className="sm:col-span-2 text-sm font-medium text-red-600">
+                    Κάτι πήγε στραβά. Δοκιμάστε ξανά ή καλέστε μας στο {business.phone}.
+                  </p>
+                )}
+
+                <button type="submit" disabled={status === "sending"} className="btn-primary sm:col-span-2 mt-1 disabled:opacity-60">
+                  {status === "sending" ? "Αποστολή…" : "Αποστολή αιτήματος"}
                 </button>
               </form>
             )}
