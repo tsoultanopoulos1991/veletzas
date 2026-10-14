@@ -2,19 +2,108 @@
 <html lang="el">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1b1e22" />
+
+    <!-- NOTE: placeholder domain — update every occurrence below (canonical,
+         og:url, og:image, twitter:image, and the two JSON-LD "url" fields)
+         once a real domain is registered and pointed at the server. -->
+
+    <title>Τέντες & Τεντοπέργκολες Περιστέρι | Τεντοτεχνική Περιστερίου</title>
     <meta
       name="description"
-      content="Τεντοτεχνική Περιστερίου – Παντελής Βελέντζας. Τεντοπέργκολες, κάθετη σκίαση, τέντες καταστημάτων & εσωτερική σκίαση στο Περιστέρι. Δωρεάν μέτρηση & προσφορά."
+      content="Τεντοπέργκολες, τέντες βραχίονα, κάθετη σκίαση, ρολοκουρτίνες και σιδηροκατασκευές στο Περιστέρι και τη Νέα Ιωνία. Δωρεάν μέτρηση & προσφορά κατ' οίκον από την Τεντοτεχνική Περιστερίου — Παντελής Βελέντζας."
     />
-    <title>Τεντοτεχνική Περιστερίου | Παντελής Βελέντζας – Συστήματα Σκίασης</title>
+    <meta
+      name="keywords"
+      content="τέντες Περιστέρι, τεντοπέργκολες, κάθετη σκίαση, τέντες βραχίονα, ρολοκουρτίνες, σκίαση βεράντας, Τεντοτεχνική Περιστερίου, Νέα Ιωνία"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Τεντοτεχνική Περιστερίου" />
+    <link rel="canonical" href="https://www.tentotexnikiperisteriou.gr/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="el_GR" />
+    <meta property="og:site_name" content="Τεντοτεχνική Περιστερίου" />
+    <meta property="og:url" content="https://www.tentotexnikiperisteriou.gr/" />
+    <meta property="og:title" content="Τέντες & Τεντοπέργκολες Περιστέρι | Τεντοτεχνική Περιστερίου" />
+    <meta
+      property="og:description"
+      content="Τεντοπέργκολες, τέντες βραχίονα, κάθετη σκίαση, ρολοκουρτίνες και σιδηροκατασκευές στο Περιστέρι και τη Νέα Ιωνία. Δωρεάν μέτρηση & προσφορά κατ' οίκον."
+    />
+    <meta property="og:image" content="https://www.tentotexnikiperisteriou.gr/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Τεντοπέργκολα με φωτισμό και θέα το σούρουπο – Τεντοτεχνική Περιστερίου" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Τέντες & Τεντοπέργκολες Περιστέρι | Τεντοτεχνική Περιστερίου" />
+    <meta
+      name="twitter:description"
+      content="Τεντοπέργκολες, τέντες βραχίονα, κάθετη σκίαση, ρολοκουρτίνες και σιδηροκατασκευές στο Περιστέρι και τη Νέα Ιωνία."
+    />
+    <meta name="twitter:image" content="https://www.tentotexnikiperisteriou.gr/og-image.jpg" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Structured data: both shop locations -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "HomeAndConstructionBusiness",
+            "@id": "https://www.tentotexnikiperisteriou.gr/#peristeri",
+            "name": "Τεντοτεχνική Περιστερίου",
+            "image": "https://www.tentotexnikiperisteriou.gr/og-image.jpg",
+            "url": "https://www.tentotexnikiperisteriou.gr/",
+            "telephone": "+302105729205",
+            "priceRange": "€€",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Φλέμινγκ 6",
+              "addressLocality": "Περιστέρι",
+              "addressRegion": "Αττική",
+              "addressCountry": "GR"
+            },
+            "areaServed": ["Περιστέρι", "Δυτική Αθήνα", "Αττική"],
+            "sameAs": ["https://instagram.com/tentotexnikiperisteriou"]
+          },
+          {
+            "@type": "HomeAndConstructionBusiness",
+            "@id": "https://www.tentotexnikiperisteriou.gr/#nea-ionia",
+            "name": "Τεντοτεχνική Περιστερίου — Κατάστημα Νέας Ιωνίας",
+            "image": "https://www.tentotexnikiperisteriou.gr/og-image.jpg",
+            "url": "https://www.tentotexnikiperisteriou.gr/",
+            "telephone": "+302102799742",
+            "priceRange": "€€",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Σινώπης 76",
+              "addressLocality": "Νέα Ιωνία",
+              "addressRegion": "Αττική",
+              "addressCountry": "GR"
+            },
+            "areaServed": ["Νέα Ιωνία", "Βόρεια Αθήνα", "Αττική"],
+            "sameAs": ["https://instagram.com/tentotexnikiperisteriou"]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
