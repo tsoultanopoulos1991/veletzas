@@ -181,6 +181,26 @@
       "job": "balcony-awnings"
     },
     {
+      "file": "/images/arm-awnings/0115-6435a6082f62.jpg",
+      "thumb": "/images/arm-awnings/0115-6435a6082f62-thumb.jpg",
+      "category": "arm-awnings",
+      "project": "tower-balconies-b",
+      "projectTitle": "Τέντες βραχίονα σύγχρονης πολυκατοικίας",
+      "usage": "residential",
+      "alt": "Τέντες βραχίονα σύγχρονης πολυκατοικίας – έργο Τεντοτεχνικής Βελέτζας",
+      "job": "tower-balconies-b"
+    },
+    {
+      "file": "/images/arm-awnings/0117-db02d23a4f5a.jpg",
+      "thumb": "/images/arm-awnings/0117-db02d23a4f5a-thumb.jpg",
+      "category": "arm-awnings",
+      "project": "tower-balconies-b",
+      "projectTitle": "Τέντες βραχίονα σύγχρονης πολυκατοικίας",
+      "usage": "residential",
+      "alt": "Τέντες βραχίονα σύγχρονης πολυκατοικίας – έργο Τεντοτεχνικής Βελέτζας",
+      "job": "tower-balconies-b"
+    },
+    {
       "file": "/images/arm-awnings/0020-240c9a2ee0ee.jpg",
       "thumb": "/images/arm-awnings/0020-240c9a2ee0ee-thumb.jpg",
       "category": "arm-awnings",
@@ -1099,26 +1119,6 @@
       "usage": "residential",
       "alt": "Τέντες βραχίονα πολυκατοικίας – έργο Τεντοτεχνικής Βελέτζας",
       "job": "tower-balconies-a"
-    },
-    {
-      "file": "/images/arm-awnings/0115-6435a6082f62.jpg",
-      "thumb": "/images/arm-awnings/0115-6435a6082f62-thumb.jpg",
-      "category": "arm-awnings",
-      "project": "tower-balconies-b",
-      "projectTitle": "Τέντες βραχίονα σύγχρονης πολυκατοικίας",
-      "usage": "residential",
-      "alt": "Τέντες βραχίονα σύγχρονης πολυκατοικίας – έργο Τεντοτεχνικής Βελέτζας",
-      "job": "tower-balconies-b"
-    },
-    {
-      "file": "/images/arm-awnings/0117-db02d23a4f5a.jpg",
-      "thumb": "/images/arm-awnings/0117-db02d23a4f5a-thumb.jpg",
-      "category": "arm-awnings",
-      "project": "tower-balconies-b",
-      "projectTitle": "Τέντες βραχίονα σύγχρονης πολυκατοικίας",
-      "usage": "residential",
-      "alt": "Τέντες βραχίονα σύγχρονης πολυκατοικίας – έργο Τεντοτεχνικής Βελέτζας",
-      "job": "tower-balconies-b"
     },
     {
       "file": "/images/arm-awnings/0119-166910a9956c.jpg",
