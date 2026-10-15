@@ -1,6 +1,16 @@
 {
   "photos": [
     {
+      "file": "/images/tentopergoles/0303-935101b15d95.jpg",
+      "thumb": "/images/tentopergoles/0303-935101b15d95-thumb.jpg",
+      "category": "tentopergoles",
+      "project": "pergola-garden-lights",
+      "projectTitle": "Τεντοπέργκολα κήπου με φωτισμό",
+      "usage": "residential",
+      "alt": "Τεντοπέργκολα κήπου με φωτισμό – έργο Τεντοτεχνικής Βελέτζας",
+      "job": "pergola-garden-lights"
+    },
+    {
       "file": "/images/tentopergoles/0003-9de44beacb49.jpg",
       "thumb": "/images/tentopergoles/0003-9de44beacb49-thumb.jpg",
       "category": "tentopergoles",
@@ -924,16 +934,6 @@
       "file": "/images/tentopergoles/0096-a14985c53307.jpg",
       "thumb": "/images/tentopergoles/0096-a14985c53307-thumb.jpg",
       "category": "tentopergoles",
-      "project": "residence-mixed",
-      "projectTitle": "Συστήματα σκίασης κατοικίας",
-      "usage": "residential",
-      "alt": "Συστήματα σκίασης κατοικίας – έργο Τεντοτεχνικής Βελέτζας",
-      "job": "residence-mixed"
-    },
-    {
-      "file": "/images/arm-awnings/0097-a5c38189355f.jpg",
-      "thumb": "/images/arm-awnings/0097-a5c38189355f-thumb.jpg",
-      "category": "arm-awnings",
       "project": "residence-mixed",
       "projectTitle": "Συστήματα σκίασης κατοικίας",
       "usage": "residential",
@@ -2599,16 +2599,6 @@
       "usage": "residential",
       "alt": "Τεντοπέργκολα ταράτσας με θέα – έργο Τεντοτεχνικής Βελέτζας",
       "job": "pergola-church-view"
-    },
-    {
-      "file": "/images/tentopergoles/0303-935101b15d95.jpg",
-      "thumb": "/images/tentopergoles/0303-935101b15d95-thumb.jpg",
-      "category": "tentopergoles",
-      "project": "pergola-garden-lights",
-      "projectTitle": "Τεντοπέργκολα κήπου με φωτισμό",
-      "usage": "residential",
-      "alt": "Τεντοπέργκολα κήπου με φωτισμό – έργο Τεντοτεχνικής Βελέτζας",
-      "job": "pergola-garden-lights"
     },
     {
       "file": "/images/tentopergoles/0304-f8c570d1c983.jpg",
