@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1b1e22" />
 
+    <!-- Google Analytics 4 — loaded unconditionally per Google's current
+         Consent Mode v2 requirement for EEA traffic, but starts fully
+         denied (no cookies, no storage) until the visitor accepts the
+         cookie banner, which calls gtag('consent','update',...). Keep this
+         ID in sync with GA_MEASUREMENT_ID in src/data/analytics.ts. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+      });
+      gtag("js", new Date());
+      gtag("config", "G-BSHYQ7D8N3", { anonymize_ip: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSHYQ7D8N3"></script>
+
     <title>Τέντες & Τεντοπέργκολες Περιστέρι | Τεντοτεχνική Περιστερίου</title>
     <meta
       name="description"

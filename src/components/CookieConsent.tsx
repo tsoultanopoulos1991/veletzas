@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { loadGoogleAnalytics } from "../lib/analytics";
+import { grantAnalyticsConsent } from "../lib/analytics";
 
 const STORAGE_KEY = "cookieConsent";
 
@@ -14,7 +14,7 @@ export default function CookieConsent() {
       // localStorage unavailable — just show the banner each visit.
     }
     if (choice === "accepted") {
-      loadGoogleAnalytics();
+      grantAnalyticsConsent();
     } else if (choice !== "rejected") {
       setVisible(true);
     }
@@ -26,7 +26,7 @@ export default function CookieConsent() {
     } catch {
       // ignore
     }
-    if (accepted) loadGoogleAnalytics();
+    if (accepted) grantAnalyticsConsent();
     setVisible(false);
   };
 

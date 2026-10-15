@@ -1,28 +1,13 @@
-import { GA_MEASUREMENT_ID } from "../data/analytics";
-
 declare global {
   interface Window {
     dataLayer: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
-let loaded = false;
-
-// Only called after the visitor accepts cookies — nothing analytics-related
-// runs (not even a script tag) until then.
-export function loadGoogleAnalytics() {
-  if (loaded || !GA_MEASUREMENT_ID || GA_MEASUREMENT_ID.includes("XXXX")) return;
-  loaded = true;
-
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(script);
-
+// gtag.js is always loaded (see index.html) but starts fully denied —
+// this just flips the one storage type we actually use to "granted".
+export function grantAnalyticsConsent() {
   window.dataLayer = window.dataLayer || [];
-  function gtag(...args: unknown[]) {
-    window.dataLayer.push(args);
-  }
-  gtag("js", new Date());
-  gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+  window.dataLayer.push(["consent", "update", { analytics_storage: "granted" }]);
 }
