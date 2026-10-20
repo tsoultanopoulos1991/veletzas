@@ -19,6 +19,14 @@
         ad_personalization: "denied",
         analytics_storage: "denied",
       });
+      // Returning visitor who already accepted: grant before "config" so the
+      // initial page_view isn't sent as a denied ping. Key must match
+      // STORAGE_KEY in src/components/CookieConsent.tsx.
+      try {
+        if (localStorage.getItem("cookieConsent") === "accepted") {
+          gtag("consent", "update", { analytics_storage: "granted" });
+        }
+      } catch (e) {}
       gtag("js", new Date());
       gtag("config", "G-BSHYQ7D8N3", { anonymize_ip: true });
     </script>

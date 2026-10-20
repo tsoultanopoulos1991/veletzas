@@ -13,9 +13,8 @@ export default function CookieConsent() {
     } catch {
       // localStorage unavailable — just show the banner each visit.
     }
-    if (choice === "accepted") {
-      grantAnalyticsConsent();
-    } else if (choice !== "rejected") {
+    // "accepted" is already applied in index.html before gtag config runs.
+    if (choice !== "accepted" && choice !== "rejected") {
       setVisible(true);
     }
   }, []);
