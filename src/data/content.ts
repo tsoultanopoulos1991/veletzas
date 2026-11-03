@@ -15,7 +15,7 @@ export const locations = [
   {
     name: "Κατάστημα Περιστερίου",
     address: "Φλέμινγκ 6, Περιστέρι",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Φλέμινγκ 6, Περιστέρι"),
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Τεντοτεχνική, Φλέμινγκ 6, Περιστέρι"),
     photo: "/images/company/0001-64cc6ad5ac58.jpg",
     phones: [
       { number: "210 57 29 205", href: "tel:+302105729205" },
@@ -26,7 +26,7 @@ export const locations = [
   {
     name: "Κατάστημα Νέας Ιωνίας",
     address: "Σινώπης 76, Νέα Ιωνία",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Σινώπης 76, Νέα Ιωνία"),
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Τεντοτεχνική, Σινώπης 76, Νέα Ιωνία"),
     photo: null,
     phones: [
       { number: "210 27 99 742", href: "tel:+302102799742" },
