@@ -28,7 +28,9 @@ export const locations = [
   {
     name: "Κατάστημα Νέας Ιωνίας",
     address: "Σινώπης 76, Νέα Ιωνία",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Τεντοτεχνική, Σινώπης 76, Νέα Ιωνία"),
+    // No Business Profile listed at this address yet — plain address only,
+    // so it pins the exact location instead of a loose keyword search.
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Σινώπης 76, Νέα Ιωνία"),
     photo: null,
     phones: [
       { number: "210 27 99 742", href: "tel:+302102799742" },
