@@ -15,7 +15,9 @@ export const locations = [
   {
     name: "Κατάστημα Περιστερίου",
     address: "Φλέμινγκ 6, Περιστέρι",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Τεντοτεχνική, Φλέμινγκ 6, Περιστέρι"),
+    // Direct link to the verified Google Business Profile listing (CID),
+    // not a text search — goes straight to the business, no results list.
+    mapsUrl: "https://maps.google.com/?cid=5500550644707695436",
     photo: "/images/company/0001-64cc6ad5ac58.jpg",
     phones: [
       { number: "210 57 29 205", href: "tel:+302105729205" },
