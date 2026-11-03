@@ -11,7 +11,7 @@ export default function About() {
           <div className="overflow-hidden rounded-[2rem] shadow-soft">
             <img
               src={mainLocation.photo ?? "/images/company/0001-64cc6ad5ac58.jpg"}
-              alt={`Το ${mainLocation.name} της Τεντοτεχνικής Περιστερίου`}
+              alt={`Το ${mainLocation.name} της Τεντοτεχνικής`}
               className="h-[420px] w-full object-cover sm:h-[520px]"
             />
           </div>
@@ -19,7 +19,7 @@ export default function About() {
             <div className="absolute -bottom-8 -right-4 w-40 overflow-hidden rounded-2xl border-4 border-cream shadow-card sm:-right-8 sm:w-52">
               <img
                 src={badgeLocation.photo}
-                alt={`Το ${badgeLocation.name} της Τεντοτεχνικής Περιστερίου`}
+                alt={`Το ${badgeLocation.name} της Τεντοτεχνικής`}
                 className="h-full w-full object-cover"
               />
             </div>

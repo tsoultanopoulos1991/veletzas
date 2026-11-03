@@ -27,7 +27,7 @@ export default function Header() {
               scrolled ? "text-ink" : "text-cream"
             }`}
           >
-            Τεντοτεχνική <span className="text-accent">Περιστερίου</span>
+            Τεντοτεχνική
           </span>
           <span
             className={`text-[11px] sm:text-xs font-medium tracking-wide transition-colors ${

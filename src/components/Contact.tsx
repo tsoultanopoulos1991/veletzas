@@ -73,7 +73,14 @@ export default function Contact() {
                 </span>
                 <span>
                   <span className="block text-xs font-semibold uppercase tracking-wide text-cream/50">{loc.name}</span>
-                  <span className="block text-lg font-semibold text-cream">{loc.address}</span>
+                  <a
+                    href={loc.mapsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block text-lg font-semibold text-cream transition-colors hover:text-accent-light"
+                  >
+                    {loc.address}
+                  </a>
                   <span className="mt-1 flex flex-wrap gap-x-3 gap-y-1">
                     {loc.phones.map((p) => (
                       <a
